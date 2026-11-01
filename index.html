@@ -14,6 +14,17 @@
   .status { border: 1px solid #c9a227; padding: 0.9rem 1.1rem; border-radius: 6px; background: #171b26; }
   footer { margin-top: 3rem; color: #8b8778; font-size: 0.9rem; }
   a { color: #c9a227; }
+  figure { margin: 1.4rem 0; }
+  figure img { width: 100%; border: 1px solid #4c5261; border-radius: 6px; display: block; }
+  figcaption { color: #bdb8a6; font-size: 0.92rem; line-height: 1.5; margin-top: 0.5rem; }
+  figcaption strong { color: #e8e4d8; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #4c5261; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; line-height: 1.45; }
+  th { color: #c9a227; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; }
+  .nums { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
+  .nums div { border: 1px solid #4c5261; border-radius: 6px; background: #171b26; padding: 0.6rem 0.9rem; }
+  .nums b { display: block; font-size: 1.25rem; color: #c9a227; }
+  .nums span { font-size: 0.85rem; color: #bdb8a6; }
 </style>
 </head>
 <body>
@@ -52,6 +63,67 @@
     <li>Save and load in four slots, including diplomacy and ruler state; fully seeded
       and reproducible</li>
   </ul>
+
+  <h2>The road so far</h2>
+  <p>Five milestones, each designed, built, and verified before the next began. Every one
+  passed the full test suite on a fresh build before it was accepted.</p>
+  <table>
+    <tr><th>Milestone</th><th>Build</th><th>What it added</th></tr>
+    <tr><td>First Chronicle</td><td>0.1.0</td><td>A structured world history with reasons —
+      why wars started, why truces were signed — with filters and click-to-locate.</td></tr>
+    <tr><td>Threshold</td><td>0.2.0</td><td>First-run guidance, help, major-event banners,
+      a census panel, and four save slots.</td></tr>
+    <tr><td>Sovereign</td><td>0.3.0</td><td>Named rulers with lifespans and succession,
+      and a kingdom stability score whose parts can be inspected.</td></tr>
+    <tr><td>Marches</td><td>0.4.0</td><td>Real warfare: mustered levies fed from granaries,
+      declared war goals, tribute, occupation, and outright conquest of villages.</td></tr>
+    <tr><td>Schism</td><td>0.5.0</td><td>Kingdoms under strain: succession crises and
+      villages breaking away to found rival crowns.</td></tr>
+  </table>
+
+  <div class="nums">
+    <div><b>45,056</b><span>tiles in every world (256 × 176)</span></div>
+    <div><b>1,060</b><span>automated checks, all passing</span></div>
+    <div><b>30,000</b><span>days in the long-run test worlds</span></div>
+    <div><b>0</b><span>asset files — everything is procedural</span></div>
+    <div><b>1 seed</b><span>reproduces a world's entire history</span></div>
+  </div>
+
+  <h2>The game as it stands</h2>
+  <p>Unretouched screenshots from development builds. What you see is the current
+  interface — panels, diagnostics and all.</p>
+
+  <figure>
+    <img src="img/inspector-kingdom.png" alt="WorldForge world map with the history panel and a kingdom inspector open">
+    <figcaption><strong>History and inspection.</strong> The world history (right) records
+    foundings, falls, starvation and drought with their causes. Below it, the kingdom of
+    Selland: ruler Branfield, stability “Secure” at 88 — shown as the sum of its parts
+    (stores 23, peace 30, calm 20, reign 15), so the number can be checked, not just read.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/chronicle-secession.png" alt="A crowded year-116 world with war declarations, a secession, and diplomacy state in the inspector">
+    <figcaption><strong>A world at year 116.</strong> Wars declared with their motives,
+    grain moved to hungry villages, a truce signed from weariness — and Branton seceding
+    from Maria, cause recorded as chronic weakness. The selected kingdom, Kelia, is tense
+    with Maria: grievance 13 one way, 38 the other.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/inspector-war.png" alt="Kingdom inspector during wartime">
+    <figcaption><strong>Warfare, inspected.</strong> From the Marches milestone: a kingdom
+    at war, with its goals and state open to inspection while the war runs.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/dead-world.png" alt="Developer diagnostics over a world where every population reads zero">
+    <figcaption><strong>Field note — the world that died.</strong> This world was left
+    running unattended at triple speed and quietly went extinct: grazers, predators and
+    humans all at zero by about year 39, with only 19 history entries ever recorded.
+    Nobody knows yet exactly why — the record is too thin. That gap is precisely what the
+    observatory, now in development, exists to close: permanent history, and tools that
+    show their evidence instead of telling a story.</figcaption>
+  </figure>
 
   <p>The full development roadmap — every stage and gate, with the current position
   marked — is on the <a href="roadmap.html">roadmap page</a>.</p>

@@ -37,6 +37,13 @@
   .hold .st { color: #e08a7d; }
   .arrow { text-align: center; color: #8b8778; font-size: 1.15rem; line-height: 1.5; }
   .arrow small { display: block; font-size: 0.8rem; letter-spacing: 0.04em; }
+  figure { margin: 1rem 0 0.2rem; }
+  figure img { width: 100%; border: 1px solid #4c5261; border-radius: 6px; display: block; }
+  figcaption { color: #bdb8a6; font-size: 0.9rem; line-height: 1.5; margin-top: 0.5rem; }
+  .phases { margin: 0.6rem 0 0.2rem; padding-left: 1.2rem; }
+  .phases li { margin: 0.25rem 0; font-size: 0.95rem; }
+  .phases .tag-now { color: #9cc0e8; }
+  .phases .tag-next { color: #8b8778; }
   .branch { border: 1px dashed #a03a30; border-radius: 6px; padding: 0.7rem 1.1rem; margin-top: 1rem; background: #1d1618; }
   .branch h3 { margin: 0 0 0.25rem; font-size: 1rem; }
   .branch p { margin: 0.2rem 0; font-size: 0.95rem; }
@@ -105,10 +112,32 @@
       <p>Five gameplay milestones are complete and verified: chronicle, first-run
       experience, rulers and succession, warfare and conquest, and kingdom instability.</p>
       <p>The current cycle is the <strong>simulation observatory</strong> — developer tools
-      that expose why the world behaves as it does: a truth panel for simulation values,
-      a permanent history record, causal investigation, and long-horizon health
-      monitoring. Its design is approved; the first phase is in progress. Gameplay
-      development resumes when the observatory passes its acceptance gate.</p>
+      that expose why the world behaves as it does. Its design is approved, and it is
+      built in five phases, each with its own gate:</p>
+      <ul class="phases">
+        <li><strong>A — Truth Panel.</strong> Every important value shown with its rule,
+          its inputs, and the events behind it. <span class="tag-now">In progress.</span></li>
+        <li><strong>B — Historical Investigation.</strong> A permanent history record for
+          every world, written in all sessions, with filtering and tracing.
+          <span class="tag-next">Planned.</span></li>
+        <li><strong>C — World Autopsy.</strong> Structured investigation of collapses and
+          turning points — trigger, contributing conditions, and honest unknowns kept
+          separate. <span class="tag-next">Planned.</span></li>
+        <li><strong>D — Health Monitor.</strong> Long-horizon measurement across many
+          worlds: populations, kingdoms, wars, and performance over centuries.
+          <span class="tag-next">Planned.</span></li>
+        <li><strong>E — Integrated Interface.</strong> The four observatory areas —
+          world view, inspector, timeline, metrics — joined into one workspace.
+          <span class="tag-next">Planned.</span></li>
+      </ul>
+      <p>Gameplay development resumes when the observatory passes its final acceptance
+      gate: a full investigation of a recorded 300-year collapse, filed as evidence.</p>
+      <figure>
+        <img src="img/devmode-world.png" alt="Developer mode diagnostics over a newly created world">
+        <figcaption>Developer mode today: a diagnostics block (simulation speed, population
+        counts, history retention) over a newly generated world. The observatory turns
+        this overlay into an investigation environment.</figcaption>
+      </figure>
     </div>
     <div class="arrow">↓</div>
 
