@@ -2,153 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Moved — Hollow Lantern Interactive</title>
+<meta http-equiv="refresh" content="0; url=https://mandog1215-tech.github.io/hollow-lantern/projects/worldforge/">
+<link rel="canonical" href="https://mandog1215-tech.github.io/hollow-lantern/projects/worldforge/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WorldForge — a living-world sandbox</title>
-<style>
-  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #10131a; color: #e8e4d8; }
-  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
-  h1 { font-size: 2.6rem; margin-bottom: 0.2rem; letter-spacing: 0.02em; }
-  .tag { color: #c9a227; font-style: italic; margin-top: 0; }
-  h2 { color: #c9a227; margin-top: 2.2rem; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  p, li { line-height: 1.55; }
-  .status { border: 1px solid #c9a227; padding: 0.9rem 1.1rem; border-radius: 6px; background: #171b26; }
-  footer { margin-top: 3rem; color: #8b8778; font-size: 0.9rem; }
-  a { color: #c9a227; }
-  figure { margin: 1.4rem 0; }
-  figure img { width: 100%; border: 1px solid #4c5261; border-radius: 6px; display: block; }
-  figcaption { color: #bdb8a6; font-size: 0.92rem; line-height: 1.5; margin-top: 0.5rem; }
-  figcaption strong { color: #e8e4d8; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
-  th, td { border: 1px solid #4c5261; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; line-height: 1.45; }
-  th { color: #c9a227; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; }
-  .nums { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
-  .nums div { border: 1px solid #4c5261; border-radius: 6px; background: #171b26; padding: 0.6rem 0.9rem; }
-  .nums b { display: block; font-size: 1.25rem; color: #c9a227; }
-  .nums span { font-size: 0.85rem; color: #bdb8a6; }
-</style>
+<style>body{font-family:Georgia,'Times New Roman',serif;background:#0c0e13;color:#ece7d9;margin:0;padding:2.5rem 1.25rem}main{max-width:40rem;margin:0 auto}a{color:#c9a227}h1{font-size:1.6rem}</style>
 </head>
 <body>
 <main>
-  <h1>WorldForge</h1>
-  <p class="tag">A living-world sandbox where geography shapes civilizations, civilizations shape history.</p>
-
-  <div class="status">
-    <strong>Development status:</strong> in active development. There is no public release yet,
-    and no downloads are offered from this page. Release announcements will appear here if and
-    when a release is approved.
-  </div>
-
-  <h2>About</h2>
-  <p>WorldForge generates a world — terrain, regions, resources — and then simulates the
-  civilizations that rise inside it: settlements are founded, grow, expand, trade food with
-  their neighbours, form kingdoms, and sometimes disappear. Everything is procedural and
-  seeded: the same seed always grows the same world, and every world's history can be
-  inspected and explained after the fact.</p>
-
-  <h2>Working today</h2>
-  <ul>
-    <li>Procedural terrain generation whose landforms affect where civilizations can thrive</li>
-    <li>Settlements that form, grow, expand, migrate, and vanish — houses are built and
-      burned on the map, and a kingdom's territory follows its built footprint</li>
-    <li>Kingdoms with named rulers: lifespans, succession, and a stability measure whose
-      components a player can inspect</li>
-    <li>Diplomacy: contact between neighbouring kingdoms, grievances, wars, raids,
-      truces, alliances, and allies called to war</li>
-    <li>Warfare with mustered levies and granary supply, declared war goals, tribute paid
-      at truce, and occupation — kingdoms can conquer each other's villages outright</li>
-    <li>An inspectable chronicle that records major events with their reasons, plus
-      per-kingdom census and history panels</li>
-    <li>Instability: a weak kingdom can lose a village to a rival crown when a ruler
-      dies, or watch its best-fed village break away and found a kingdom of its own</li>
-    <li>Save and load in four slots, including diplomacy and ruler state; fully seeded
-      and reproducible</li>
-  </ul>
-
-  <h2>The road so far</h2>
-  <p>Five milestones, each designed, built, and verified before the next began. Every one
-  passed the full test suite on a fresh build before it was accepted.</p>
-  <table>
-    <tr><th>Milestone</th><th>Build</th><th>What it added</th></tr>
-    <tr><td>First Chronicle</td><td>0.1.0</td><td>A structured world history with reasons —
-      why wars started, why truces were signed — with filters and click-to-locate.</td></tr>
-    <tr><td>Threshold</td><td>0.2.0</td><td>First-run guidance, help, major-event banners,
-      a census panel, and four save slots.</td></tr>
-    <tr><td>Sovereign</td><td>0.3.0</td><td>Named rulers with lifespans and succession,
-      and a kingdom stability score whose parts can be inspected.</td></tr>
-    <tr><td>Marches</td><td>0.4.0</td><td>Real warfare: mustered levies fed from granaries,
-      declared war goals, tribute, occupation, and outright conquest of villages.</td></tr>
-    <tr><td>Schism</td><td>0.5.0</td><td>Kingdoms under strain: succession crises and
-      villages breaking away to found rival crowns.</td></tr>
-  </table>
-
-  <div class="nums">
-    <div><b>45,056</b><span>tiles in every world (256 × 176)</span></div>
-    <div><b>1,060</b><span>automated checks, all passing</span></div>
-    <div><b>30,000</b><span>days in the long-run test worlds</span></div>
-    <div><b>0</b><span>asset files — everything is procedural</span></div>
-    <div><b>1 seed</b><span>reproduces a world's entire history</span></div>
-  </div>
-
-  <h2>The game as it stands</h2>
-  <p>Unretouched screenshots from development builds. What you see is the current
-  interface — panels, diagnostics and all.</p>
-
-  <figure>
-    <img src="img/inspector-kingdom.png" alt="WorldForge world map with the history panel and a kingdom inspector open">
-    <figcaption><strong>History and inspection.</strong> The world history (right) records
-    foundings, falls, starvation and drought with their causes. Below it, the kingdom of
-    Selland: ruler Branfield, stability “Secure” at 88 — shown as the sum of its parts
-    (stores 23, peace 30, calm 20, reign 15), so the number can be checked, not just read.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/chronicle-secession.png" alt="A crowded year-116 world with war declarations, a secession, and diplomacy state in the inspector">
-    <figcaption><strong>A world at year 116.</strong> Wars declared with their motives,
-    grain moved to hungry villages, a truce signed from weariness — and Branton seceding
-    from Maria, cause recorded as chronic weakness. The selected kingdom, Kelia, is tense
-    with Maria: grievance 13 one way, 38 the other.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/inspector-war.png" alt="Kingdom inspector during wartime">
-    <figcaption><strong>Warfare, inspected.</strong> From the Marches milestone: a kingdom
-    at war, with its goals and state open to inspection while the war runs.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/dead-world.png" alt="Developer diagnostics over a world where every population reads zero">
-    <figcaption><strong>Field note — the world that died.</strong> This world was left
-    running unattended at triple speed and quietly went extinct: grazers, predators and
-    humans all at zero by about year 39, with only 19 history entries ever recorded.
-    Nobody knows yet exactly why — the record is too thin. That gap is precisely what the
-    observatory, now in development, exists to close: permanent history, and tools that
-    show their evidence instead of telling a story.</figcaption>
-  </figure>
-
-  <p>The full development roadmap — every stage and gate, with the current position
-  marked — is on the <a href="roadmap.html">roadmap page</a>. How the simulation's
-  systems interact is explained on <a href="systems.html">how the simulation works</a>,
-  and how the project grades its own claims — including the gaps it admits — on
-  <a href="evidence.html">evidence &amp; quality</a>.</p>
-
-  <h2>Roadmap</h2>
-  <p>Planned — not yet implemented:</p>
-  <ul>
-    <li>A simulation observatory for the development tools: why values hold, permanent
-      history, causal investigation (in development — current work)</li>
-    <li>Living diplomacy: grievances that arise without a war, and alliances that form
-      in ordinary play (designed; implementation paused while the observatory is built)</li>
-    <li>Inter-kingdom trade and caravans; then physical settlements — more building
-      types, roads, and city walls</li>
-    <li>Seasons and climate that act on farming and survival; rivers with mechanical
-      effects</li>
-    <li>A first-play build for hands-on evaluation</li>
-  </ul>
-
-  <footer>
-    <p>WorldForge is a Hollow Lantern project. This page distinguishes what is implemented
-    from what is planned; it is updated only when that changes.</p>
-  </footer>
+<h1>This page has moved</h1>
+<p>WorldForge now lives on the unified Hollow Lantern Interactive website.
+You are being redirected automatically.</p>
+<p>If the redirect does not work, continue to:
+<a href="https://mandog1215-tech.github.io/hollow-lantern/projects/worldforge/">https://mandog1215-tech.github.io/hollow-lantern/projects/worldforge/</a></p>
 </main>
 </body>
 </html>
