@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorldForge — how the simulation works</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #10131a; color: #e8e4d8; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  h1 { font-size: 2.2rem; margin-bottom: 0.2rem; letter-spacing: 0.02em; }
+  .tag { color: #c9a227; font-style: italic; margin-top: 0; }
+  h2 { color: #c9a227; margin-top: 2.2rem; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  p, li { line-height: 1.55; }
+  a { color: #c9a227; }
+  footer { margin-top: 3rem; color: #8b8778; font-size: 0.9rem; }
+  .sys { border: 1px solid #4c5261; border-left: 6px solid #4c5261; border-radius: 6px; background: #171b26; padding: 0.8rem 1.1rem; margin: 0.9rem 0; }
+  .sys h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+  .sys p { margin: 0.2rem 0; font-size: 0.95rem; }
+  .sys .st { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #7fc48a; }
+  .sys .st.plan { color: #8b8778; }
+  .chain { border: 1px solid #c9a227; border-radius: 6px; background: #171b26; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .chain p { margin: 0.3rem 0; text-align: center; font-size: 1.02rem; }
+  .chain .arr { color: #c9a227; text-align: center; margin: 0; }
+  .chain .loop { font-size: 0.9rem; color: #bdb8a6; font-style: italic; }
+</style>
+</head>
+<body>
+<main>
+  <h1>How the simulation works</h1>
+  <p class="tag">Simple to watch. Layered underneath — and every layer pushes on the others.</p>
+  <p><a href="index.html">← Back to the WorldForge page</a> · <a href="roadmap.html">Roadmap</a> · <a href="evidence.html">Evidence &amp; quality</a></p>
+
+  <p>WorldForge is not a set of independent features. It is one chain of causes: the land
+  decides what can live, what lives decides what can be built, and what is built decides
+  who holds power — while war, hunger and time push back down the chain.</p>
+
+  <div class="chain">
+    <p><strong>Geography</strong> — landforms, forests, water, climate zones</p>
+    <p class="arr">↓ shapes</p>
+    <p><strong>Ecology &amp; food</strong> — grazers, predators, forage, harvests</p>
+    <p class="arr">↓ feeds</p>
+    <p><strong>Settlements</strong> — villages, houses, food and wood stores</p>
+    <p class="arr">↓ grows</p>
+    <p><strong>Populations &amp; kingdoms</strong> — rulers, succession, stability</p>
+    <p class="arr">↓ drives</p>
+    <p><strong>Diplomacy &amp; warfare</strong> — grievances, alliances, wars, conquest</p>
+    <p class="loop">…and conquest, raiding and collapse rewrite the map the chain began with.</p>
+  </div>
+
+  <h2>The systems</h2>
+
+  <div class="sys">
+    <p class="st">Working today</p>
+    <h3>Terrain &amp; geography</h3>
+    <p>Every world is generated from a seed: continents, mountain ranges, forests, plains
+    and frozen wastes. Landform decides fertility and movement, so civilizations thrive
+    where the land allows — and the terrain model was adopted only after a 100-seed
+    comparison showed it no worse than what it replaced, on every measure.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st">Working today</p>
+    <h3>Ecology</h3>
+    <p>Grazers eat, predators hunt, and both populations rise and fall by the actual food
+    web — no scripted booms or busts. Humans live inside the same web: villages forage
+    the land around them, and a stripped landscape starves real settlements.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st">Working today</p>
+    <h3>Settlements</h3>
+    <p>People found villages, raise houses (each house is a real structure on the map),
+    and stockpile food and wood. A village's territory follows its built footprint.
+    Houses can burn in raids; a village with empty stores for too long is abandoned,
+    and its people migrate or scatter.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st">Working today</p>
+    <h3>Kingdoms &amp; rulers</h3>
+    <p>Villages band into kingdoms under named rulers whose lifespans and succession are
+    part of the world's record. Each kingdom has a stability score built from things a
+    player can check — food stores, peace, calm borders, reign continuity — and low
+    stability has consequences: when a ruler dies at the wrong moment, a kingdom can
+    lose villages to rivals or watch its best-fed village break away as a new crown.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st">Working today</p>
+    <h3>Diplomacy</h3>
+    <p>Kingdoms that touch borders keep a relationship: grievances from wars and raids,
+    truces with reasons, alliances, and allies called to war. Every major event lands in
+    the chronicle with the motive that produced it, so a relationship's history can be
+    read rather than guessed.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st">Working today</p>
+    <h3>Warfare</h3>
+    <p>Wars are fought by mustered levies fed from the home granary — an army that
+    outruns its food stops being an army. Wars have declared goals (conquest of land,
+    or punishment), truces cost tribute, and sustained occupation annexes villages
+    outright. Distance and supply are real constraints, measured in the test panels.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st plan">Designed — implementation paused</p>
+    <h3>Living diplomacy</h3>
+    <p>Grievances that grow without any war — from contested borders and competition
+    for the same fields — and alliances that form around shared threats in ordinary
+    play. The design is complete and evidence-based; building it waits until the
+    observatory (below) is finished, so its behaviour can be properly measured.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st plan">Planned</p>
+    <h3>Trade, settlements &amp; seasons</h3>
+    <p>Inter-kingdom trade and caravans; richer settlements with more building types,
+    roads and walls; seasons and climate acting on farming and survival; rivers with
+    mechanical effects. Each is sequenced behind the systems it must interact with —
+    trade needs money and professions, roads grow out of trade routes.</p>
+  </div>
+
+  <div class="sys">
+    <p class="st plan">In development — current work</p>
+    <h3>The observatory</h3>
+    <p>Not a gameplay system: the instrument panel for all of them. A truth panel that
+    shows why every value holds, a permanent history record for every world, autopsy
+    tools for collapses, and long-horizon health monitoring across many worlds. It is
+    read-only by construction — it can never change the world it observes. See the
+    <a href="roadmap.html">roadmap</a> for its five phases.</p>
+  </div>
+
+  <h2>Design rules</h2>
+  <ul>
+    <li><strong>Determinism:</strong> one seed grows one world and one history,
+      reproducibly. That is what makes every claim on this site testable.</li>
+    <li><strong>Interaction over isolation:</strong> a new system must push on the
+      existing ones, or it does not ship.</li>
+    <li><strong>No scripted history:</strong> events happen because the rules produced
+      them, never because a timeline says so.</li>
+    <li><strong>Proportionate models:</strong> mathematics earns its place by producing
+      believable behaviour, not by looking sophisticated.</li>
+  </ul>
+
+  <footer>
+    <p>System statuses on this page follow the development record: “working today” means
+    implemented and verified in a development build; “planned” means designed or
+    sequenced, not built. Updated at milestone closeouts.</p>
+  </footer>
+</main>
+</body>
+</html>

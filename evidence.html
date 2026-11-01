@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorldForge — evidence &amp; quality</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #10131a; color: #e8e4d8; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  h1 { font-size: 2.2rem; margin-bottom: 0.2rem; letter-spacing: 0.02em; }
+  .tag { color: #c9a227; font-style: italic; margin-top: 0; }
+  h2 { color: #c9a227; margin-top: 2.2rem; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  p, li { line-height: 1.55; }
+  a { color: #c9a227; }
+  footer { margin-top: 3rem; color: #8b8778; font-size: 0.9rem; }
+  .rung { border: 1px solid #4c5261; border-left: 6px solid #4c5261; border-radius: 6px; background: #171b26; padding: 0.8rem 1.1rem; margin: 0.9rem 0; }
+  .rung h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+  .rung p { margin: 0.2rem 0; font-size: 0.95rem; }
+  .gap { border: 1px solid #a03a30; border-left: 6px solid #a03a30; border-radius: 6px; background: #1d1618; padding: 0.8rem 1.1rem; margin: 0.9rem 0; }
+  .gap h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+  .gap p { margin: 0.2rem 0; font-size: 0.95rem; }
+  .gap .st { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #e08a7d; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Evidence &amp; quality</h1>
+  <p class="tag">How this project knows what it claims to know — and what it admits it doesn't.</p>
+  <p><a href="index.html">← Back to the WorldForge page</a> · <a href="roadmap.html">Roadmap</a> · <a href="systems.html">How the simulation works</a></p>
+
+  <h2>Three grades of “it works”</h2>
+  <p>Every claim about the simulation carries one of three grades. The grades are not
+  interchangeable, and this site uses them literally.</p>
+
+  <div class="rung">
+    <h3>1 · Implemented</h3>
+    <p>The code exists and the automated suite passes — currently 1,060 checks across the
+    ordinary and safety-instrumented builds, plus fuzz testing of the save format.
+    Implementation proves a mechanism <em>can</em> work. It says nothing about whether
+    the living world actually uses it.</p>
+  </div>
+
+  <div class="rung">
+    <h3>2 · Demonstrated</h3>
+    <p>A controlled, reproducible experiment shows the behaviour happening for the stated
+    reason. Example: warfare was accepted after twelve worlds × 30,000 days produced
+    896 war onsets and 80 conquests through the designed mechanisms — counted by
+    instruments, not inferred from anecdotes.</p>
+  </div>
+
+  <div class="rung">
+    <h3>3 · Established</h3>
+    <p>The behaviour holds across varied conditions and the wider simulation is unharmed.
+    Example: the current terrain model was adopted only after a 100-seed matched
+    comparison showed it non-inferior on every endpoint — and the two seeds where it
+    did worse are documented by name, not averaged away.</p>
+  </div>
+
+  <h2>Claims are allowed to fail</h2>
+  <p>A relationship described in a design document but not found by measurement stays
+  <em>described</em> — it is never promoted by enthusiasm. Standing example: the warfare
+  design expected distance from home to change how occupation plays out. Measured at
+  every supply setting the design allowed, it did not. That is recorded as an open
+  limitation in the project's register, with a design rethink owed — not tuned until
+  the numbers confessed.</p>
+
+  <h2>Known gaps — shown, not hidden</h2>
+
+  <div class="gap">
+    <p class="st">Open case · #33</p>
+    <h3>The world that died unexplained</h3>
+    <p>A randomly seeded world went extinct in every species by about year 39 while
+    running unattended. Its fate reproduces exactly from its seed — but its 19 history
+    entries were never written to disk, so <em>why</em> it died is unknown. The case is
+    registered as future test material for the observatory's autopsy tools. Unknown
+    means unknown until the evidence exists.</p>
+  </div>
+
+  <div class="gap">
+    <p class="st">Technical debt · TD-5</p>
+    <h3>History is kept in a rolling window</h3>
+    <p>The chronicle retains the most recent 1,024 entries — enough for recent events,
+    not for centuries. The permanent history record (observatory Phase B) is the fix,
+    designed around completeness, consistency with what actually happened, and fast
+    retrieval. Until it ships, long-horizon history is honestly partial.</p>
+  </div>
+
+  <div class="gap">
+    <p class="st">Invariant gap · INV-2</p>
+    <h3>One purity proof is indirect</h3>
+    <p>Recording history must never disturb the simulation's randomness. That is proven
+    directly for the relief system; for history-writing itself, the current proof is
+    indirect (identical chronicles across save/load). The observatory's first phase
+    must either close this with a direct test or report it as still open.</p>
+  </div>
+
+  <div class="gap">
+    <p class="st">Measured limitation</p>
+    <h3>Kingdoms cap at 24</h3>
+    <p>Kingdoms only disappear when their last village does, so long-lived worlds
+    eventually fill all 24 kingdom slots and founding stops — while wars, successions
+    and defections continue. Measured, classified as a design decision owed in the
+    long-term milestone, and not counted as a defect until its gameplay cost is
+    judged. The simulation does not halt at the cap: one test world recorded 82,602
+    births over 30,000 days in that state.</p>
+  </div>
+
+  <div class="gap">
+    <p class="st">Long-horizon evidence</p>
+    <h3>Ecology over centuries</h3>
+    <p>Some long test worlds collapse ecologically over 30,000 days; others saturate.
+    Whether that is defensible turnover or a defect is an open judgment, assigned to
+    the long-term milestone with the evidence preserved. It is not being quietly
+    tuned in the meantime.</p>
+  </div>
+
+  <h2>Where the records live</h2>
+  <p>The game's source repository is private during development, so this site carries
+  the public record: milestone closeouts, this page's gap register, and the
+  <a href="roadmap.html">roadmap</a> are all drawn from the same development log the
+  team works from — never written separately for show. When the game ships, the
+  repository and its full evidence archive ship with it.</p>
+
+  <footer>
+    <p>If a claim on this site ever conflicts with the development record, the record
+    is right and the site gets corrected.</p>
+  </footer>
+</main>
+</body>
+</html>
